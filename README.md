@@ -22,12 +22,25 @@ This project tackles these challenges by leveraging **Singular Value Decompositi
 4. **Classification & Evaluation:** Compared classification models on the raw data versus the SVD-processed data to quantify the improvement in trend prediction.
 
 ## 📊 Results & Performance
-The application of SVD successfully removed noise without losing critical variance. Evaluation showed that as the number of components (*k*) increased, the F1 score improved until reaching a plateau of efficiency at **k=5**. 
+The application of SVD successfully removed market noise without losing critical variance. Evaluation showed that as the number of components (*k*) increased, the F1 score improved until reaching a plateau of efficiency at **k=5**. 
 
 * **Before SVD:** Accuracy = `0.9508` | F1 Score = `0.9559`
 * **After SVD:** Accuracy = `0.9549` | F1 Score = `0.9594`
 
-The integration of SVD yielded a leaner dataset, favoring computing efficiency while simultaneously improving both accuracy and F1 classification scores.
+### SVD Pattern Extraction
+By reducing the dimensionality, the model successfully isolated the primary underlying movements of the stock data, filtering out daily volatility.
+
+![Top 3 Trends](images/top-trends.png)
+
+### Noise Reduction
+The SVD reconstruction demonstrates a cleaner signal compared to the raw historical data, providing a more stable foundation for the classification algorithms.
+
+![Original vs Reconstructed](images/original-vs-reconstructed.png)
+
+### Predictive Forecasting
+Leveraging the reduced dataset, the classification models successfully mapped the smoothed features to predict future market trend boundaries.
+
+![Forecasting Trends](images/forecasting-trends.png)
 
 ## 🛠️ Technical Implementation
 * **Data Engineering:** Built pipelines to clean, format, and prepare raw financial datasets for downstream mathematical processing.
